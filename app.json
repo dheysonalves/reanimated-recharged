@@ -2,6 +2,7 @@
   "expo": {
     "name": "reanimated-recharged",
     "slug": "reanimated-recharged",
+    "owner": "dheysonalves",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
