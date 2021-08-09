@@ -28,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": " A reanimated learning repository for study purposes. ",
+    "githubUrl": "https://github.com/dheysonalves/reanimated-recharged"
   }
 }
