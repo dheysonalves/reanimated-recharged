@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withTiming, withSpring, withRepeat } from 'react-native-reanimated';
 
 const SIZE = 100.0;
@@ -9,7 +8,7 @@ const SIZE = 100.0;
 //   return `${progress.value * 2 * Math.PI}rad`;
 // }
 
-export default function App() {
+export default function CircleRepeatSpring() {
   const progress = useSharedValue(1);
   const scale = useSharedValue(1);
 
