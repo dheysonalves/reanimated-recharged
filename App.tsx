@@ -11,6 +11,7 @@ import HomeBasic from './pages/basic/index'
 import PanGestureOne from "./pages/basic/PanGestureOne";
 import HomeIntermediate from "./pages/Intermediate";
 import MovableCard from "./pages/Intermediate/movableCard";
+import AnimatedScrollView from "./pages/basic/AnimatedScrollView";
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +70,15 @@ function App() {
 						headerShown: true,
 						statusBarHidden: true,
 						headerTitle: "Movable Card",
+					}}
+				/>
+				<Stack.Screen
+					name="AnimatedScrollView"
+					component={AnimatedScrollView}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "Animated Scroll View",
 					}}
 				/>
 			</Stack.Navigator>

@@ -52,8 +52,8 @@ const HomeBasic = () => {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={[styles.button, { backgroundColor: "#0009" }]}
-					onPress={() => alert("Go to Advanced")}>
-					<Text style={styles.buttonText}>Other...</Text>
+					onPress={() => navigate("AnimatedScrollView")}>
+					<Text style={styles.buttonText}>Animated Scroll View...</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
