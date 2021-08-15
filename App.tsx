@@ -12,6 +12,7 @@ import PanGestureOne from "./pages/basic/PanGestureOne";
 import HomeIntermediate from "./pages/Intermediate";
 import MovableCard from "./pages/Intermediate/movableCard";
 import AnimatedScrollView from "./pages/basic/AnimatedScrollView";
+import ThemeSwiper from "./pages/basic/ThemeSwiper";
 
 const Stack = createNativeStackNavigator();
 
@@ -79,6 +80,15 @@ function App() {
 						headerShown: true,
 						statusBarHidden: true,
 						headerTitle: "Animated Scroll View",
+					}}
+				/>
+				<Stack.Screen
+					name="ThemeSwiper"
+					component={ThemeSwiper}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "Theme Swiper",
 					}}
 				/>
 			</Stack.Navigator>

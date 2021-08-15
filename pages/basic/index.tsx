@@ -53,7 +53,12 @@ const HomeBasic = () => {
 				<TouchableOpacity
 					style={[styles.button, { backgroundColor: "#0009" }]}
 					onPress={() => navigate("AnimatedScrollView")}>
-					<Text style={styles.buttonText}>Animated Scroll View...</Text>
+					<Text style={styles.buttonText}>Animated Scroll View</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={[styles.button, { backgroundColor: "#0009" }]}
+					onPress={() => navigate("ThemeSwiper")}>
+					<Text style={styles.buttonText}>Theme Swiper</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
