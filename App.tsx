@@ -1,44 +1,79 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withTiming, withSpring, withRepeat } from 'react-native-reanimated';
+// In App.js in a new project
 
-const SIZE = 100.0;
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-// const handleRotation = (progress: Animated.SharedValue<number>) => {
-//   return `${progress.value * 2 * Math.PI}rad`;
-// }
+import CircleRepeatSpring from "./pages/basic/CircleRepeatSpring/CircleRepeatSpring";
 
-export default function App() {
-  const progress = useSharedValue(1);
-  const scale = useSharedValue(1);
+import AnimationLevels from './pages/index'
+import HomeBasic from './pages/basic/index'
+import PanGestureOne from "./pages/basic/PanGestureOne";
+import HomeIntermediate from "./pages/Intermediate";
+import MovableCard from "./pages/Intermediate/movableCard";
 
-  const reanimatedStyle = useAnimatedStyle(() => {
-    return {
-      opacity: progress.value,
-      borderRadius: (progress.value * SIZE) / 2,
-      transform: [{ scale: scale.value }, { rotate: `${progress.value * 2 * Math.PI}rad`},
-    ]
-    }
-  }, []);
+const Stack = createNativeStackNavigator();
 
-  useEffect(() => {
-    progress.value = withRepeat(withSpring(0.5), -1, true);
-    scale.value = withRepeat(withSpring(1), 3, true);
-  }, [])
-
-  return (
-    <View style={styles.container}>
-      <Animated.View style={[{height: SIZE, width: SIZE, backgroundColor: 'purple'}, reanimatedStyle]} />
-    </View>
-  );
+function App() {
+	return (
+		<NavigationContainer>
+			<Stack.Navigator initialRouteName="AnimationLevels">
+				<Stack.Screen
+					name="AnimationLevels"
+					component={AnimationLevels}
+					options={{
+						headerShown: false,
+						statusBarHidden: true,
+					}}
+				/>
+				<Stack.Screen
+					name="HomeBasic"
+					component={HomeBasic}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "",
+					}}
+				/>
+				<Stack.Screen
+					name="HomeIntermediate"
+					component={HomeIntermediate}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "",
+					}}
+				/>
+				<Stack.Screen
+					name="CircleRepeatSpring"
+					component={CircleRepeatSpring}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "Circle Spring",
+					}}
+				/>
+				<Stack.Screen
+					name="PanGestureOne"
+					component={PanGestureOne}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "PanGesture One",
+					}}
+				/>
+				<Stack.Screen
+					name="MovableCard"
+					component={MovableCard}
+					options={{
+						headerShown: true,
+						statusBarHidden: true,
+						headerTitle: "Movable Card",
+					}}
+				/>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
